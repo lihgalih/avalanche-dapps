@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-5e2421f63c5da4bfc55d23057e9b977886c8518b",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/SimpleStorage.sol": "project/contracts/SimpleStorage.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/SimpleStorage.sol": {
+        "content": "// SPDX-License-Identifier: MIT\r\npragma solidity ^0.8.20;\r\n\r\ncontract SimpleStorage {\r\n    uint256 private storedValue;\r\n\r\n    event ValueUpdated(uint256 newValue);\r\n\r\n    function setValue(uint256 _value) public {\r\n        storedValue = _value;\r\n        emit ValueUpdated(_value);\r\n    }\r\n\r\n    function getValue() public view returns (uint256) {\r\n        return storedValue;\r\n    }\r\n}\r\n"
+      }
+    }
+  }
+}
